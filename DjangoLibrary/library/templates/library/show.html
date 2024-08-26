@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href='{%static "library/css/show.css"%}'>
+</head>
+<body>
+    <span>
+        <button type="submit"><a href="{% url 'addbook'%}">Добавить книгу</a></button>
+    </span>
+    <table>
+        <tr>
+            <td>Автор </td>
+            <td>Имя </td>
+            <td>Жанр</td>
+            <td>Дата</td>
+        </tr>
+        {% for i in myd %}
+            <tr>
+                <td>{{i.author}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.genre}}</td>
+                <td>{{i.date}}</td>
+            </tr>
+        {% endfor %}
+        
+       </table>
+</body>
+</html>

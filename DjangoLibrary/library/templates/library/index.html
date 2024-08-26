@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href='{%static "library/css/index.css"%}'>
+</head>
+<body>
+    <span ><button  type="submit" ><a href="{% url 'add'%}">Добавить автора</a></button>
+        
+    </span>
+   <table>
+    <tr>
+        <td>Имя </td>
+        <td>Фамилия </td>
+        <td>Отчество</td>
+        <td>Дата рождения</td>
+    </tr>
+    {% for i in mod %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.lastname}}</td>
+            <td>{{i.patronymic}}</td>
+            <td>{{i.date}}</td>
+        </tr>
+    {% endfor %}
+    
+   </table>
+   
+</body>
+</html>
